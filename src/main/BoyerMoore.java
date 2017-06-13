@@ -9,7 +9,7 @@ public class BoyerMoore {
     	String pattern = "cabcbb";
     	int result;
     	
-    	result = Asteroid.searchString(text, pattern);
+    	result = Asteroid.search(text, pattern);
     	
     	if(result >= 0){
     		System.out.println(text);
@@ -23,5 +23,7 @@ public class BoyerMoore {
     	}else{
     		System.out.println("No match found...");
     	}
+    	
+    	System.out.println(Asteroid.reverse(text));
     }
 }

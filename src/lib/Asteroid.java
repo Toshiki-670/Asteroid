@@ -16,13 +16,12 @@ public class Asteroid {
     		return table[(int)ch];
     	return remain;
     }
-    public static int searchString(String text, String pattern){
+    public static int search(String text, String pattern){
     	int[] table = new int[256];
     	initTable(table, pattern);
-    	
     	int i, j;
     	i = j = pattern.length() - 1;
-    	while((i < text.length()) && (j >= 0)){
+    	while((i < text.length()) && (j >= 0))
     		if(text.charAt(i) != pattern.charAt(j)){
     			i += nextStep(table, text.charAt(i), pattern.length() - j);
     			j  = pattern.length() - 1;
@@ -30,10 +29,7 @@ public class Asteroid {
     			i -= 1;
     			j -= 1;
     		}
-    	}
-    	if(j < 0){
-    		return i + 1;
-    	}
+    	if(j < 0) return i + 1;
     	return -1;
     }
     
@@ -48,16 +44,15 @@ public class Asteroid {
     
     public static String repeat(String str, int rep){
     	String out = "";
-    	for(int i = 0; i < rep; i++){
+    	for(int i = 0; i < rep; i++)
     		out += str;
-    	}
     	return out;
     }
     
     
     public static String reverse(String str){
     	String out= "";
-    	for(int i = 0; i < str.length(); i++){
+    	for(int i = str.length() - 1; i >= 0; i--){
     		out += str.charAt(i);
     	}
     	return out;
